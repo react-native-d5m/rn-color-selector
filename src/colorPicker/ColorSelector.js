@@ -2,40 +2,48 @@ import React from 'react';
 import {
     View,
     StyleSheet,
-    FlatList,
     Text,
     TouchableOpacity,
-    Image
+    Image,
+    SectionList
 } from 'react-native';
 import PropTypes from 'prop-types';
 import tinyColor from 'tinycolor2';
 import AdvancedColorPicker from './AdvancedColorSelector';
 
 const defaultColors = [
-    'rainbow',
-    'red',
-    'orange',
-    '#ffd600',
-    '#89bc41',
-    'blue',
-    'purple',
-    'brown',
-    'magenta',
-    'tan',
-    'cyan',
-    'olive',
-    'maroon',
-    'navy',
-    'aquamarine',
-    'turquoise',
-    'silver',
-    'lime',
-    'indigo',
-    'violet',
-    'pink',
-    'black',
-    'grey',
-    'white'
+    {
+        title: 'Defaults',
+        data: [{
+            colors: [
+                'rainbow',
+                'red',
+                'orange',
+                '#ffd600',
+                '#89bc41',
+                'blue',
+                'purple',
+                'brown',
+                'magenta',
+                'tan',
+                'cyan',
+                'olive',
+                'maroon',
+                'navy',
+                'aquamarine',
+                'turquoise',
+                'silver',
+                'lime',
+                'indigo',
+                'violet',
+                'pink',
+                'black',
+                'grey',
+                'white'
+            ]
+        }
+        ]
+    }
 ];
 
 export default function ColorSelector(
@@ -46,10 +54,10 @@ export default function ColorSelector(
         outputColor,
         shouldShowCancel,
         onPressCancel,
-        title,
         titleStyle,
         onSelectColor,
-        cancelTitle
+        cancelTitle,
+        useDefaultColors
     }
 ) {
     const [selectedColor, setSelectedColor] = React.useState('#c80000');
@@ -58,7 +66,7 @@ export default function ColorSelector(
         setShouldShowAdvancedColorPicker
     ] = React.useState(false);
 
-    const renderDefaultsCell = () => {
+    const renderDefaultsCell = ({ item }) => {
         if (shouldShowAdvancedColorPicker) {
             return (
                 <AdvancedColorPicker
@@ -79,15 +87,9 @@ export default function ColorSelector(
         }
         return (
             <View key={'defaults'} style={styles.colorSelectorContainer}>
-                {
-                    title
-                        ? <Text style={[styles.title, titleStyle]}>
-                            {title}
-                        </Text>
-                        : null}
                 <View style={styles.body}>
                     {
-                        colorsArray.map((color) => {
+                        item.colors.map((color) => {
                             if (color === 'rainbow') {
                                 return (
                                     <TouchableOpacity
@@ -125,35 +127,46 @@ export default function ColorSelector(
                         })
                     }
                 </View>
-                {
-                    shouldShowCancel && onPressCancel
-                        ? <View style={styles.cancel}>
-                            <TouchableOpacity
-                                style={{
-                                    padding: 10,
-                                    alignItems: 'center'
-                                }}
-                                onPress={() => onPressCancel()}>
-                                <Text style={{
-                                    fontSize: 16,
-                                    color: 'grey'
-                                }}>{cancelTitle}</Text>
-                            </TouchableOpacity>
-                        </View>
-                        : null
-                }
             </View>
         );
     };
 
+    const renderSectionHeader = (title) => {
+        return (
+            <Text style={[styles.title, titleStyle]}>
+                {title}
+            </Text>
+        )
+    }
+
     return (
         <View style={[styles.container, containerStyle]}>
-            <FlatList
-                data={[{ key: 'defaults' }]}
+            <SectionList
+                style={{ width: '100%' }}
+                sections={useDefaultColors && colorsArray !== defaultColors ? defaultColors.concat(colorsArray) : (useDefaultColors ? defaultColors : colorsArray)}
                 scrollEnabled={!shouldShowAdvancedColorPicker}
                 renderItem={renderDefaultsCell}
-                keyExtractor={item => item.key}
+                keyExtractor={item => item.title}
+                renderSectionHeader={({ section: { title } }) => renderSectionHeader(title)}
             />
+            {
+                shouldShowCancel && onPressCancel
+                    ? <View style={styles.cancel}>
+                        <TouchableOpacity
+                            style={{
+                                padding: 10,
+                                paddingRight: 20,
+                                alignItems: 'center'
+                            }}
+                            onPress={() => onPressCancel()}>
+                            <Text style={{
+                                fontSize: 16,
+                                color: 'grey'
+                            }}>{cancelTitle}</Text>
+                        </TouchableOpacity>
+                    </View>
+                    : null
+            }
         </View>
     );
 }
@@ -171,7 +184,8 @@ ColorSelector.propTypes = {
     title: PropTypes.string,
     titleStyle: PropTypes.object,
     onSelectColor: PropTypes.func,
-    cancelTitle: PropTypes.string
+    cancelTitle: PropTypes.string,
+    useDefaultColors: PropTypes.bool
 };
 
 ColorSelector.defaultProps = {
@@ -179,7 +193,8 @@ ColorSelector.defaultProps = {
     title: 'Defaults',
     outputColor: () => { },
     onSelectColor: () => { },
-    cancelTitle: 'Cancel'
+    cancelTitle: 'Cancel',
+    useDefaultColors: true
 };
 
 const styles = StyleSheet.create({

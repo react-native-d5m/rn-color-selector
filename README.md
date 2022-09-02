@@ -6,9 +6,9 @@ An elegant color selector solution for React Native apps. Clean and simple to im
 <br>Currently supported on following platforms:
 </p>
 
-|  iOS  | Android |
-| :---: | :-----: |
-|![iOS Screenshot](./assets/iOS-Color-Selector.gif)|![Android Screenshot](./assets/android-Color-Selector.gif)|
+|                        iOS                         |                          Android                           |
+| :------------------------------------------------: | :--------------------------------------------------------: |
+| ![iOS Screenshot](./assets/iOS-Color-Selector.gif) | ![Android Screenshot](./assets/android-Color-Selector.gif) |
 
 ## Installation & Usage
 
@@ -115,18 +115,18 @@ return (
 <br/> <br/>
 ### <ColorSelector /\>
 
-| Property           | Description                                                                                                                                                                                                                     | Type                                                    | Required | Platform     |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | -------- | ------------ |
-| `containerStyle`   | Used to style and layout the `<ColorSelector />`. As per the name this only affect the style of the container which holds the color buttons.                                                                                    | View.style                                              | No       | iOS, Android |
-| `titleStyle`       | The text style (object) of the title of the `<ColorSelector />`.                                                                                                                                                                | bool                                                    | No       | iOS, Android |
-| `title`            | The title of the `<ColorSelector />` component. Default is "Defaults".                                                                                                                                                          | number                                                  | No       | iOS, Android |
-| `cancelTitle`      | The name of the "Cancel" button on the `<ColorSelector />`. Default is "Cancel".                                                                                                                                                | string                                                  | No       | iOS, Android |
-| `shouldShowCancel` | Whether to show the "Cancel" button on `<ColorSelector />` component.   <br/><br/> <b>Note:</b> If `onPressCancel` is not given a function the "Cancel" button will also not show.                                              | bool                                                    | No       | iOS, Android |
-| `onPressCancel`    | Callback that is called when the user presses the cancel button.     <br/><br/> <b>Note:</b> If `onPressCancel` is not given a function the "Cancel" button will also not show.                                                 | function                                                | No       | iOS, Android |
-| `colorsArray`      | Array array of colors to show as the default colors. Default colors are provided if this property is null.                                                                                                                      | array  [color](https://reactnative.dev/docs/colors)     | No       | iOS, Android |
-| `initialColor`     | The initial color that will appear on the `<AdvancedColorSelector />` when the color wheel is selected.                                                                                                                         | string     [color](https://reactnative.dev/docs/colors) | No       | iOS, Android |
-| `onSelectColor`    | Callback that is called wheneven a user selects a default color in the `<ColorSelector />` or when the user selects a color on the `<AdvancedColorSelector />` and the user presses "Done". Value passed is the selected color. | function                                                | No       | iOS, Android |
-| `outputColor`      | Callback that is called whenever a user selects a new color in the `<ColorSelector />` or as the user is actively dragging their finger on the color pad in `<AdvancedColorSelector />`. Value passed is the selected color.    | function                                                | No       | iOS, Android |
+| Property           | Description                                                                                                                                                                                                                                                                                      | Type                                                    | Required | Platform     |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------- | -------- | ------------ |
+| `containerStyle`   | Used to style and layout the `<ColorSelector />`. As per the name this only affect the style of the container which holds the color buttons.                                                                                                                                                     | View.style                                              | No       | iOS, Android |
+| `titleStyle`       | The text style (object) of the titles of the `<ColorSelector />`.                                                                                                                                                                                                                                 | bool                                                    | No       | iOS, Android |
+| `cancelTitle`      | The name of the "Cancel" button on the `<ColorSelector />`. Default is "Cancel".                                                                                                                                                                                                                 | string                                                  | No       | iOS, Android |
+| `shouldShowCancel` | Whether to show the "Cancel" button on `<ColorSelector />` component.   <br/><br/> <b>Note:</b> If `onPressCancel` is not given a function the "Cancel" button will also not show.                                                                                                               | bool                                                    | No       | iOS, Android |
+| `onPressCancel`    | Callback that is called when the user presses the cancel button.     <br/><br/> <b>Note:</b> If `onPressCancel` is not given a function the "Cancel" button will also not show.                                                                                                                  | function                                                | No       | iOS, Android |
+| `colorsArray`      | An array of section color objects to show as the default colors plus additional sections such as "Saved Colors" and "Recents Colors". Default colors are provided if this property is null. Uses `SectionList` format for data. (See Reference [colorsArray](#colorsarray) below for an example) | array  [color](https://reactnative.dev/docs/colors)     | No       | iOS, Android |
+| `useDefaultColors`     | If true, default colors will be used in addtion to any `colorsArray` indicated via the `colorsArray` property. If false, the `colorsArray` property replaces the default colors.                                                                                                                                                                                          | bool   | No       | iOS, Android |
+| `initialColor`     | The initial color that will appear on the `<AdvancedColorSelector />` when the color wheel is selected.                                                                                                                                                                                          | string     [color](https://reactnative.dev/docs/colors) | No       | iOS, Android |
+| `onSelectColor`    | Callback that is called wheneven a user selects a default color in the `<ColorSelector />` or when the user selects a color on the `<AdvancedColorSelector />` and the user presses "Done". Value passed is the selected color.                                                                  | function                                                | No       | iOS, Android |
+| `outputColor`      | Callback that is called whenever a user selects a new color in the `<ColorSelector />` or as the user is actively dragging their finger on the color pad in `<AdvancedColorSelector />`. Value passed is the selected color.                                                                     | function                                                | No       | iOS, Android |
 
 <br/> <br/>
 ### <AdvancedColorSelector /\>
@@ -144,7 +144,43 @@ return (
 | `initialColor`   | The initial color that will appear on the color pad in the `<AdvancedColorSelector />` component.                                                                                                     | string   [color](https://reactnative.dev/docs/colors) | No       | iOS, Android |
 | `outputColor`    | Callback that is called as the user is actively dragging their finger on the color pad in `<AdvancedColorSelector />` or when the user presses the "Done" button. Value passed is the selected color. | string [color](https://reactnative.dev/docs/colors)   | No       | iOS, Android |
 
-<br/> <br/>
+
+<br/><br/>
+## Reference
+
+### colorsArray:
+```javascript
+
+colorsArray = {
+    [
+        {
+            title: "Recent Colors",
+            data: [
+                {
+                    colors: [
+                        "blue",
+                        "red",
+                        "white"
+                    ]
+                }
+            ]
+        },
+        {
+            title: "Saved Colors",
+            data: [
+                {
+                    colors: [
+                        "yellow",
+                        "green",
+                         "purple"
+                    ]
+                }
+            ]
+        }
+    ]
+};
+```
+
 ## Contributing
 
 When [creating an issue](https://github.com/react-native-d5m/rn-color-selector/issues) please remember to specify the platform which the issue occurs on.
