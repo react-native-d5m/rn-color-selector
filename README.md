@@ -8,7 +8,7 @@ An elegant color selector solution for React Native apps. Clean and simple to im
 
 |  iOS  | Android |
 | :---: | :-----: |
-|[iOS Screenshot](./assets/iOS-Color-Selector.gif)|[Android Screenshot](./assets/android-Color-Selector.gif)|
+|![iOS Screenshot](./assets/iOS-Color-Selector.gif)|![Android Screenshot](./assets/android-Color-Selector.gif)|
 
 ## Installation & Usage
 
