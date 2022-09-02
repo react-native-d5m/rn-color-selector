@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center"> <code>@react-native-d5m/color-selector</code> </h1>
+  <h1 align="center"> <code>@react-native-d5m/rn-color-selector</code> </h1>
 </p>
 An elegant color selector solution for React Native apps. Clean and simple to implement.
 
@@ -14,11 +14,11 @@ An elegant color selector solution for React Native apps. Clean and simple to im
 
 To install this module `cd` to your project directory and enter the following command:
 ```
-yarn add @react-native-d5m/color-selector
+yarn add @react-native-d5m/rn-color-selector
 ```
 or
 ```
-npm install @react-native-d5m/color-selector
+npm install @react-native-d5m/rn-color-selector
 ```
 
 ### Installing dependencies
@@ -43,7 +43,7 @@ Allows display of the color selector anywhere in your app. The color selector in
 #### Wrap your app with the `<ColorSelectorProvider>` if you intend on using the `useColorSelector`
 
 ```javascript
-import { ColorSelectorProvider } from '@react-native-d5m/color-selector';
+import { ColorSelectorProvider } from '@react-native-d5m/rn-color-selector';
 
 return (
     <ColorSelectorProvider> 
@@ -56,7 +56,7 @@ return (
 #### Use `useColorSelector` anywhere within your app
 
 ```javascript
-import { useSelector } from '@react-native-d5m/color-selector';
+import { useSelector } from '@react-native-d5m/rn-color-selector';
 
 const openColorSelector = useColorSelector();
 
@@ -74,7 +74,7 @@ const showColorSelector = () => {
 Allows display of the `<ColorSelector />` where inserted into the code. This component initially shows a default set of colors to choose from `<ColorSelector />`, or if the color wheel is selected, the `AdvancedColorSelector />` is displayed where the user can choose any color they desire, including typing in a color in all formats. 
 
 ```javascript
-import { ColorSelector } from '@react-native-d5m/color-selector';
+import { ColorSelector } from '@react-native-d5m/rn-color-selector';
 
 return (
     <ColorSelector
@@ -90,7 +90,7 @@ return (
 Allows display of the `<AdvancedColorSelector />` where inserted into the code. This component allows usage of only the color pad where the user can choose any color they desire, including typing in a color in all formats.
 
 ```javascript
-import { AdvancedColorSelector } from '@react-native-d5m/color-selector';
+import { AdvancedColorSelector } from '@react-native-d5m/rn-color-selector';
 
 return (
     <AdvancedColorSelector
@@ -100,8 +100,6 @@ return (
     />
 );
 ```
-
-Check out the [example project](example) for more examples.
 
 ---
 
@@ -149,7 +147,7 @@ Check out the [example project](example) for more examples.
 <br/> <br/>
 ## Contributing
 
-When [creating an issue](https://github.com/react-native-d5m/color-selector/issues) please remember to specify the platform which the issue occurs on.
+When [creating an issue](https://github.com/react-native-d5m/rn-color-selector/issues) please remember to specify the platform which the issue occurs on.
 <br/> <br/>
 ## Maintainers
 

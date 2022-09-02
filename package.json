@@ -1,5 +1,5 @@
 {
-  "name": "@react-native-d5m/color-selector",
+  "name": "@react-native-d5m/rn-color-selector",
   "version": "0.0.3",
   "description": "An elegant color selector/picker solution for React Native apps. Clean and simple to implement.",
   "main": "index.js",
@@ -25,10 +25,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/react-native-d5m/color-selector.git"
+    "url": "https://github.com/react-native-d5m/rn-color-selector.git"
   },
   "bugs": {
-    "url": "https://github.com/react-native-d5m/color-selector/issues"
+    "url": "https://github.com/react-native-d5m/rn-color-selector/issues"
   },
   "homepage": "https://www.double5media.com",
   "publishConfig": {
