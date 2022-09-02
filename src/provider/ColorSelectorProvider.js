@@ -23,7 +23,7 @@ export default function ColorSelectorProvider(props) {
     };
 
     const onPressColor = (hexColor) => {
-        if (colorPickerState.onPressColor) {
+        if (colorPickerState &&  colorPickerState.onPressColor) {
             colorPickerState.onPressColor(hexColor);
         }
         setShouldShowColorPicker(false);
@@ -54,7 +54,7 @@ export default function ColorSelectorProvider(props) {
                             onPressColor(color);
                         }}
                         outputColor={(color) => {
-                            if (colorPickerState.outputColor) {
+                            if (colorPickerState && colorPickerState.outputColor) {
                                 colorPickerState.outputColor(color);
                             }
                         }}

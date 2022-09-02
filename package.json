@@ -1,6 +1,6 @@
 {
   "name": "@react-native-d5m/color-selector",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "An elegant color selector/picker solution for React Native apps. Clean and simple to implement.",
   "main": "index.js",
   "files": [
@@ -23,13 +23,25 @@
     "ios",
     "android"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-native-d5m/color-selector.git"
+  },
+  "bugs": {
+    "url": "https://github.com/react-native-d5m/color-selector/issues"
+  },
+  "homepage": "https://www.double5media.com",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
-    "tinycolor2": "^1.4.2",
-    "react-native-linear-gradient": "^2.6.2",
-    "@react-native-community/slider": "^4.3.1"
+    "prop-types": "^15.6.0",
+    "tinycolor2": "^1.4.2"
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-linear-gradient": ">= 2.6.2",
+    "@react-native-community/slider": ">= 4.3.1"
   }
 }
