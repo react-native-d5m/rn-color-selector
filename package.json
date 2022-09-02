@@ -1,0 +1,35 @@
+{
+  "name": "@react-native-d5m/color-selector",
+  "version": "0.0.1",
+  "description": "An elegant color selector/picker solution for React Native apps. Clean and simple to implement.",
+  "main": "index.js",
+  "files": [
+    "src/",
+    "assets/"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Double5Media LLC <admin@double5media.com> - Noel Beharry",
+  "license": "MIT",
+  "keywords": [
+    "react native",
+    "color",
+    "selector",
+    "picker",
+    "canva",
+    "react",
+    "native",
+    "ios",
+    "android"
+  ],
+  "dependencies": {
+    "tinycolor2": "^1.4.2",
+    "react-native-linear-gradient": "^2.6.2",
+    "@react-native-community/slider": "^4.3.1"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  }
+}
