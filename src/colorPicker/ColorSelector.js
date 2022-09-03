@@ -150,7 +150,7 @@ export default function ColorSelector(
                 renderSectionHeader={({ section: { title } }) => renderSectionHeader(title)}
             />
             {
-                shouldShowCancel && onPressCancel
+                shouldShowCancel && onPressCancel && !shouldShowAdvancedColorPicker
                     ? <View style={styles.cancel}>
                         <TouchableOpacity
                             style={{
