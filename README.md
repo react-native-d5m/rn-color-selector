@@ -35,9 +35,9 @@ npm install @react-native-community/slider react-native-linear-gradient
 
 The following code presents the 3 basic usage scenarios of this library:
 
-#### useSelector({})
+#### useColorSelector({})
 
-Allows display of the color selector anywhere in your app. The color selector initially shows a default set of colors to choose from `<ColorSelector />`, or if the color wheel is selected, the `AdvancedColorSelector />` is displayed where the user can choose any color they desire, including typing in a color in all formats.
+Allows display of the color selector anywhere in your app. The color selector initially shows a default set of colors to choose from `<ColorSelector />`, or if the color wheel is selected, the `<AdvancedColorSelector />` is displayed where the user can choose any color they desire, including typing in a color in all formats.
 
 
 #### Wrap your app with the `<ColorSelectorProvider>` if you intend on using the `useColorSelector`
@@ -56,7 +56,7 @@ return (
 #### Use `useColorSelector` anywhere within your app
 
 ```javascript
-import { useSelector } from '@react-native-d5m/rn-color-selector';
+import { useColorSelector } from '@react-native-d5m/rn-color-selector';
 
 const openColorSelector = useColorSelector();
 
@@ -71,7 +71,7 @@ const showColorSelector = () => {
 
 #### <ColorSelector /\>
 
-Allows display of the `<ColorSelector />` where inserted into the code. This component initially shows a default set of colors to choose from `<ColorSelector />`, or if the color wheel is selected, the `AdvancedColorSelector />` is displayed where the user can choose any color they desire, including typing in a color in all formats. 
+Allows display of the `<ColorSelector />` where inserted into the code. This component initially shows a default set of colors to choose from `<ColorSelector />`, or if the color wheel is selected, the `<AdvancedColorSelector />` is displayed where the user can choose any color they desire, including typing in a color in all formats. 
 
 ```javascript
 import { ColorSelector } from '@react-native-d5m/rn-color-selector';
