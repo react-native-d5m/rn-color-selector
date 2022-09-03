@@ -201,4 +201,4 @@ This module includes extracted module  [react-native-color](https://github.com/h
 
 Feeling appreciative and want more? 
 
-[Donate](https://) to keep updates and more fresh React Native Modules coming! 💪
+[Donate](https://www.venmo.com/noel-beharry) to keep updates and more fresh React Native Modules coming! 💪
