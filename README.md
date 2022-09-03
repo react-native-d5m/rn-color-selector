@@ -105,12 +105,12 @@ return (
 
 ## Properties
 <br/> <br/>
-### useSelector({})
+### useColorSelector({})
 
 | Property       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Type     | Required | Platform     |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | ------------ |
-| `outputColor`  | Outputs the selected color with any color interaction in hex. <br/> <br/>The useSelector accepts an object with 2 arguments, outputColor and onPressColor. <br/> <br/>The `outputColor` argument is a function which passes the selected color to be used in hex. Both ColorSelector and AdvancedColorSelector colors are passed. (See usage example above.)                                                                                                  | function | No       | iOS, Android |
-| `onPressColor` | Used to get the selected color from a chosen color from the ColorSelector and the chosen color from the AdvancedColorSelector when the "Done" button is pressed. <br/><br/>The useSelector accepts an object with 2 arguments, outputColor and onPressColor. <br/> <br/>The `onPressColor` argument is a string which passes the selected color to be used in hex. Both ColorSelector and AdvancedColorSelector colors are passed. (See usage example above.) | string   | No       | iOS, Android |
+| `outputColor`  | Outputs the selected color with any color interaction in hex. <br/> <br/>The useColorSelector accepts an object with 2 arguments, outputColor and onPressColor. <br/> <br/>The `outputColor` argument is a function which passes the selected color to be used in hex. Both ColorSelector and AdvancedColorSelector colors are passed. (See usage example above.)                                                                                                  | function | No       | iOS, Android |
+| `onPressColor` | Used to get the selected color from a chosen color from the ColorSelector and the chosen color from the AdvancedColorSelector when the "Done" button is pressed. <br/><br/>The useColorSelector accepts an object with 2 arguments, outputColor and onPressColor. <br/> <br/>The `onPressColor` argument is a string which passes the selected color to be used in hex. Both ColorSelector and AdvancedColorSelector colors are passed. (See usage example above.) | string   | No       | iOS, Android |
 
 <br/> <br/>
 ### <ColorSelector /\>
