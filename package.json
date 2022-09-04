@@ -1,6 +1,6 @@
 {
   "name": "@react-native-d5m/rn-color-selector",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "An elegant color selector/picker solution for React Native apps. Clean and simple to implement.",
   "main": "index.js",
   "files": [
