@@ -1,8 +1,32 @@
 <p align="center">
   <h1 align="center"> <code>@react-native-d5m/rn-color-selector</code> </h1>
 </p>
+<p align="center">
+    <a href="https://www.npmjs.com/package/@react-native-d5m/rn-color-selector">
+        <img src="https://img.shields.io/npm/v/@react-native-d5m/rn-color-selector.svg" alt="Latest version released on npmjs" />
+    </a>
+    <a href="https://www.npmjs.com/package/@react-native-d5m/rn-color-selector">
+        <img src="https://img.shields.io/badge/platforms-android%20|%20ios%20-lightgrey.svg" alt="Supported platforms" />
+    </a>
+    <a href="https://github.com/react-native-d5m/rn-color-selector/blob/master/LICENSE">
+        <img src="https://img.shields.io/npm/l/@react-native-d5m/rn-color-selector.svg" alt="License" />
+    </a>
+    <a aria-label="expo downloads" href="http://www.npmtrends.com/@react-native-d5m/rn-color-selector" target="_blank">
+    <img alt="Downloads" src="https://img.shields.io/npm/dm/@react-native-d5m/rn-color-selector.svg?style=flat-square&labelColor=gray&color=33CC12&label=Downloads" />
+  </a>
+</p>
+<p align="center">
+<a href="https://www.double5media.com">
+        <img src="https://double5media.com/wp-content/uploads/2021/10/D5-Wing-flipped-e1633921598368.png" alt="Latest version released on npmjs" width="100" height="30" />
+    </a>
+    <br/>
+    <a href="https://www.double5media.com">
+        <img src="https://double5media.com/wp-content/uploads/2021/10/D5-logo-wo-logo-e1633921474206.png" alt="Latest version released on npmjs" width="200" height="40" />
+    </a>
+    </p>
+<p align="center">
 An elegant color selector solution for React Native apps. Clean and simple to implement.
-
+</p>
 <br>Currently supported on following platforms:
 </p>
 

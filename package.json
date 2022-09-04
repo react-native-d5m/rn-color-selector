@@ -30,7 +30,7 @@
   "bugs": {
     "url": "https://github.com/react-native-d5m/rn-color-selector/issues"
   },
-  "homepage": "https://www.double5media.com",
+  "homepage": "https://github.com/react-native-d5m/rn-color-selector",
   "publishConfig": {
     "access": "public"
   },
