@@ -5,7 +5,8 @@ import {
     Text,
     TouchableOpacity,
     Image,
-    SectionList
+    SectionList,
+    KeyboardAvoidingView
 } from 'react-native';
 import PropTypes from 'prop-types';
 import tinyColor from 'tinycolor2';
@@ -57,7 +58,8 @@ export default function ColorSelector(
         titleStyle,
         onSelectColor,
         cancelTitle,
-        useDefaultColors
+        useDefaultColors,
+        advancedColorSelectorStyle
     }
 ) {
     const [selectedColor, setSelectedColor] = React.useState('#c80000');
@@ -82,6 +84,7 @@ export default function ColorSelector(
                         setSelectedColor(hexColor);
                         outputColor(hexColor);
                     }}
+                    containerStyle={advancedColorSelectorStyle}
                 />
             );
         }
@@ -140,14 +143,14 @@ export default function ColorSelector(
     }
 
     return (
-        <View style={[styles.container, containerStyle]}>
+        <KeyboardAvoidingView style={[styles.container, containerStyle]} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
             <SectionList
                 style={{ width: '100%' }}
                 sections={useDefaultColors && colorsArray !== defaultColors ? defaultColors.concat(colorsArray) : (useDefaultColors ? defaultColors : colorsArray)}
                 scrollEnabled={!shouldShowAdvancedColorPicker}
                 renderItem={renderDefaultsCell}
                 keyExtractor={item => item.title}
-                renderSectionHeader={({ section: { title } }) => renderSectionHeader(title)}
+                renderSectionHeader={({ section: { title } }) => shouldShowAdvancedColorPicker ? null : renderSectionHeader(title)}
             />
             {
                 shouldShowCancel && onPressCancel && !shouldShowAdvancedColorPicker
@@ -167,7 +170,7 @@ export default function ColorSelector(
                     </View>
                     : null
             }
-        </View>
+        </KeyboardAvoidingView>
     );
 }
 

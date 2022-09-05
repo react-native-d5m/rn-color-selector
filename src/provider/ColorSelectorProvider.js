@@ -4,7 +4,9 @@ import ColorSelector from '../colorPicker/ColorSelector';
 
 export const ColorSelectorContext = React.createContext({
     outputColor: () => { },
-    onPressColor: () => { }
+    onPressColor: () => { },
+    colorSelectorStyle: {},
+    advancedColorSelectorStyle: {}
 });
 
 export default function ColorSelectorProvider(props) {
@@ -15,15 +17,27 @@ export default function ColorSelectorProvider(props) {
     const [
         colorPickerState,
         setColorPickerState
-    ] = React.useState(null);
+    ] = React.useState({
+        colorSelectorStyle: {},
+        advancedColorSelectorStyle: {}
+    });
 
     const setShowColorPicker = (value) => {
         setShouldShowColorPicker(true);
-        setColorPickerState(value);
+        const inputValues = Object.assign({}, value);
+        if (value && !'colorSelectorStyle' in value) {
+            console.log('false')
+            inputValues.colorSelectorStyle = {};
+        }
+        if (value && !'advancedColorSelectorStyle' in value) {
+            console.log('fals2e')
+            inputValues.advancedColorSelectorStyle = {};
+        }
+        setColorPickerState(inputValues);
     };
 
     const onPressColor = (hexColor) => {
-        if (colorPickerState &&  colorPickerState.onPressColor) {
+        if (colorPickerState && colorPickerState.onPressColor) {
             colorPickerState.onPressColor(hexColor);
         }
         setShouldShowColorPicker(false);
@@ -45,8 +59,11 @@ export default function ColorSelectorProvider(props) {
                             backgroundColor: 'white',
                             justifyContent: 'center',
                             alignItems: 'center',
-                            paddingBottom: 50
+                            paddingBottom: 50,
+                            ...colorPickerState.colorSelectorStyle
                         }}
+                        colorSelectorStyle={colorPickerState.colorSelectorStyle}
+                        advancedColorSelectorStyle={colorPickerState.advancedColorSelectorStyle}
                         onPressCancel={
                             () => setShouldShowColorPicker(false)
                         }

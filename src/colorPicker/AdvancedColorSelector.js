@@ -7,7 +7,8 @@ import {
   PanResponder,
   Animated,
   Text,
-  StyleSheet
+  StyleSheet,
+  KeyboardAvoidingView
 } from 'react-native';
 import tinycolor from 'tinycolor2';
 import { HueSlider } from '../react-native-color';
@@ -170,10 +171,10 @@ export default class AdvancedColorSelector extends React.Component {
 
   render() {
     return (
-      <LinearGradient colors={['white', 'white']}
+      <View colors={['white', 'white']}
         style={[styles.container, this.props.containerStyle]}
       >
-        <View>
+        <LinearGradient colors={['white', 'white']}>
           <View
             {...this.panResponder.panHandlers}
             style={[
@@ -210,7 +211,7 @@ export default class AdvancedColorSelector extends React.Component {
               left: this.pan.x._value - 10
             }]}
           />
-        </View>
+        </LinearGradient>
         <View style={{
           flexDirection: 'row',
           justifyContent: 'space-evenly',
@@ -277,7 +278,7 @@ export default class AdvancedColorSelector extends React.Component {
             </View>
             : null
         }
-      </LinearGradient>
+      </View>
     );
   }
 }
