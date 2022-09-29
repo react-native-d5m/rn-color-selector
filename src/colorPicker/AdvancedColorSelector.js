@@ -158,13 +158,14 @@ export default class AdvancedColorSelector extends React.Component {
   }
 
   onChangeText = (text) => {
-    this.setState({ text });
-    if (tinycolor(text).isValid()) {
+    const editedText = text.replace(/#/g, "");
+    this.setState({ text: editedText });
+    if (tinycolor(editedText).isValid()) {
       this.setState({
-        backgroundColor: tinycolor(text).toRgb()
+        backgroundColor: tinycolor(editedText).toRgb()
       });
       this.props.outputColor(
-        `#${tinycolor(`rgb(${tinycolor(text).toRgb().r}, ${tinycolor(text).toRgb().g}, ${tinycolor(text).toRgb().b})`).toHex()}`
+        `#${tinycolor(`rgb(${tinycolor(editedText).toRgb().r}, ${tinycolor(editedText).toRgb().g}, ${tinycolor(editedText).toRgb().b})`).toHex()}`
       );
     }
   };
