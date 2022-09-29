@@ -28,7 +28,7 @@
     </a>
     </p>
     <p align="center">
-        <br><b>Stable version 1.0.0</b><br><br>
+        <br><b>Stable version 1.0.2</b><br><br>
     </p>
 <p align="center">
 An elegant color selector solution for React Native apps. Clean and simple to implement.
